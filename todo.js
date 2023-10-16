@@ -2,15 +2,14 @@ const fs = require("fs");
 
 class Todo {
   constructor() {
-    this.tasks = this.loadTasks();
+    this.tasks = this.readTask();
   }
 
-  loadTasks() {
+  readTask() {
     try {
       const tasksData = fs.readFileSync("task.json", "utf8");
       return JSON.parse(tasksData);
     } catch (error) {
-        console.error("Error loading tasks:", error);
       return [];
     }
   }

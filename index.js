@@ -1,12 +1,12 @@
 const readline = require("readline");
 const Todo = require("./todo");
+const todo = new Todo();
 
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
 
-const todo = new Todo();
 
 function displayMenu() {
   console.log(`Todo a List Application 
@@ -15,7 +15,7 @@ Please Choose One of These Tasks.`);
 }
 
 function promptUser() {
-  rl.question("Enter your choice: ", (choice) => {
+  rl.question("Chose one Of these Tasks: ", (choice) => {
     Choices(choice);
   });
 }
